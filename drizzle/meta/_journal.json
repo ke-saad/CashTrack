@@ -1,0 +1,34 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1724461906569,
+      "tag": "0000_round_obadiah_stane",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1725407587749,
+      "tag": "0001_glorious_fat_cobra",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1725418656887,
+      "tag": "0002_medical_excalibur",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1725743247108,
+      "tag": "0003_spicy_inhumans",
+      "breakpoints": true
+    }
+  ]
+}
