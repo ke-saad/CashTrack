@@ -10,13 +10,13 @@ config({ path: ".env.local" });
 const sql = neon(process.env.DATABASE_URL!);
 const db = drizzle(sql);
 
-const SEED_USER_ID = "user_2kqVkvJjaez892rjS5fCGHHMKEF";
+const SEED_USER_ID = "user_2mMC8zO0UtUnLKOMwZCJXF32n6e";
 
 const SEED_CATEGORIES = [
     { id: "category_1", name: "Food", userId: SEED_USER_ID, plaidId: null },
     { id: "category_2", name: "Rent", userId: SEED_USER_ID, plaidId: null },
     { id: "category_3", name: "Utilities", userId: SEED_USER_ID, plaidId: null },
-    { id: "category_7", name: "Clothing", userId: SEED_USER_ID, plaidId: null },
+    { id: "category_4", name: "Clothing", userId: SEED_USER_ID, plaidId: null },
 ];
 
 const SEED_ACCOUNTS = [
@@ -77,11 +77,16 @@ const generateTransactions = () => {
 
 const main = async () => {
     try {
+        // Delete all existing records from tables in the correct order
         await db.delete(transactions).execute();
-        await db.delete(accounts).execute();
         await db.delete(categories).execute();
+        await db.delete(accounts).execute();
+
+        // Insert new data
         await db.insert(categories).values(SEED_CATEGORIES).execute();
         await db.insert(accounts).values(SEED_ACCOUNTS).execute();
+        
+        // Generate and insert transactions
         generateTransactions();
         await db.insert(transactions).values(SEED_TRANSACTIONS).execute();
     } catch (error) {
