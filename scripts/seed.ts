@@ -13,15 +13,15 @@ const db = drizzle(sql);
 const SEED_USER_ID = "user_2mMC8zO0UtUnLKOMwZCJXF32n6e";
 
 const SEED_CATEGORIES = [
-    { id: "category_1", name: "Food", userId: SEED_USER_ID, plaidId: null },
-    { id: "category_2", name: "Rent", userId: SEED_USER_ID, plaidId: null },
-    { id: "category_3", name: "Utilities", userId: SEED_USER_ID, plaidId: null },
-    { id: "category_4", name: "Clothing", userId: SEED_USER_ID, plaidId: null },
+    { id: "category_1", name: "Food", userId: SEED_USER_ID },
+    { id: "category_2", name: "Rent", userId: SEED_USER_ID },
+    { id: "category_3", name: "Utilities", userId: SEED_USER_ID },
+    { id: "category_4", name: "Clothing", userId: SEED_USER_ID },
 ];
 
 const SEED_ACCOUNTS = [
-    { id: "account_1", name: "Checking", userId: SEED_USER_ID, plaidId: null },
-    { id: "account_2", name: "Savings", userId: SEED_USER_ID, plaidId: null },
+    { id: "account_1", name: "Checking", userId: SEED_USER_ID },
+    { id: "account_2", name: "Savings", userId: SEED_USER_ID },
 ];
 
 const defaultTo = new Date();
